@@ -12,6 +12,8 @@ const Expandable = ({ children }) => {
   );
   // look here 👇
   const value = useMemo(() => ({ expanded, toggle }), [expanded, toggle]);
+
+  //useMemo takes a callback that returns the object value {expanded, toggle} and we pass an array dependency [expanded, toggle]. This means that the memoized value remains the same unless the dependencies change.
   return <Provider value={value}>{children}</Provider>;
 };
 
