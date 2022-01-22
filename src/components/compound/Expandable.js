@@ -6,6 +6,9 @@ import React, {
   useEffect,
   useMemo,
 } from "react";
+import Header from "./Header";
+import Icon from "./Icon";
+import Body from "./Body";
 
 //useEffect is always invoked on mount, we want to be able to toggle this component
 
@@ -30,3 +33,8 @@ const Expandable = ({ children, onExpand }) => {
 };
 
 export default Expandable;
+
+// Remember this is just a personal reference. It's not mandatory
+Expandable.Header = Header;
+Expandable.Body = Body;
+Expandable.Icon = Icon;
