@@ -7,6 +7,8 @@ import React, {
   useMemo,
 } from "react";
 
+//useEffect is always invoked on mount, we want to be able to toggle this component
+
 const ExpandableContext = createContext();
 const { Provider } = ExpandableContext;
 
