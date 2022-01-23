@@ -1,8 +1,13 @@
 import { useContext } from "react";
 import { ExpandableContext } from "./Expandable";
-
-const Icon = () => {
+import "./icon.css";
+const Icon = ({ className = "", ...otherProps }) => {
   const { expanded } = useContext(ExpandableContext);
-  return expanded ? "-" : "+";
+  const combinedClassNames = ["Expandable-icon", className].join("");
+  return (
+    <span className={combinedClassNames} {...otherProps}>
+      {expanded ? "-" : "+"}
+    </span>
+  );
 };
 export default Icon;
