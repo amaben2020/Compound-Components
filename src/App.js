@@ -5,7 +5,9 @@ const App = () => {
   return (
     <div>
       <Expandable>
-        <Expandable.Header>React hooks</Expandable.Header>
+        <Expandable.Header style={{ color: "red" }}>
+          React hooks
+        </Expandable.Header>
         <Expandable.Icon />
         <Expandable.Body>Hooks are awesome</Expandable.Body>
       </Expandable>

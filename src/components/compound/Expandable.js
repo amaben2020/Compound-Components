@@ -23,6 +23,10 @@ const Expandable = ({ children, onExpand }) => {
     []
   );
   const componentJustMounted = useRef(true);
+  console.log(componentJustMounted);
+
+  //this implies that when the component mounts, the ref is true, but when you click, the ref is false and this changes based on the expanded prop.
+  // When the component mounts, the ref is true, the onExpanded fn only fires when the ref is false.
   useEffect(() => {
     if (!componentJustMounted.current) {
       onExpand(expanded);
