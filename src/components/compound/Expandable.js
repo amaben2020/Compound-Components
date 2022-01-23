@@ -12,7 +12,8 @@ import Body from "./Body";
 
 //useEffect is always invoked on mount, we want to be able to toggle this component
 
-const ExpandableContext = createContext();
+export const ExpandableContext = createContext();
+
 const { Provider } = ExpandableContext;
 
 const Expandable = ({ children, onExpand }) => {
@@ -32,9 +33,8 @@ const Expandable = ({ children, onExpand }) => {
   return <Provider value={value}>{children}</Provider>;
 };
 
-export default Expandable;
-
 // Remember this is just a personal reference. It's not mandatory
 Expandable.Header = Header;
 Expandable.Body = Body;
 Expandable.Icon = Icon;
+export default Expandable;
