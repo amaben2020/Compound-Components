@@ -17,12 +17,20 @@ export const ExpandableContext = createContext();
 
 const { Provider } = ExpandableContext;
 
-const Expandable = ({ children, onExpand, className = "", ...otherProps }) => {
+const Expandable = ({
+  children,
+  onExpand,
+  className = "",
+  shouldExpand,
+  ...otherProps
+}) => {
   const [expanded, setExpanded] = useState(false);
   const toggle = useCallback(
     () => setExpanded((prevExpanded) => !prevExpanded),
     []
   );
+  // see check 👇
+  const isExpandControlled = shouldExpand !== undefined;
   const componentJustMounted = useRef(true);
 
   //this implies that when the component mounts, the ref is true, but when you click, the ref is false and this changes based on the expanded prop.

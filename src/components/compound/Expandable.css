@@ -1,4 +1,20 @@
 .Expandable {
   position: relative;
   width: 350px;
+  animation-name: slowDown;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
+  transition: all 0.2s;
+}
+
+@keyframes slowDown {
+  0% {
+    transform: translateY(-100px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
